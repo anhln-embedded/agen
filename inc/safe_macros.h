@@ -51,8 +51,8 @@
  #define SAFE_FPRINTF(stream, format, ...) (((stream) && (format)) ? fprintf((stream), (format), __VA_ARGS__) : -1)
  
  /* ================= FORMATTED OUTPUT ================= */
- #define SAFE_SNPRINTF(str, size, format, ...) \
-     (((str) && (format)) ? snprintf((str), (size), (format), __VA_ARGS__) : -1)
+ #define SAFE_SNPRINTF(str, size, format, ...)  \
+    (((str) && (size) && (format)) ? snprintf((str), (size), (format), __VA_ARGS__) : -1)
  
  /* Note: Removed SAFE_SPRINTF due to safety concerns. Use SAFE_SNPRINTF instead. */
  
